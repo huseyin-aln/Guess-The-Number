@@ -43,6 +43,12 @@
     font-size: 1.3rem;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 #check-button {
     width: 5rem;
     height: 3rem;

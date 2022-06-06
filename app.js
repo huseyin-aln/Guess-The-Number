@@ -11,6 +11,7 @@ let warning = document.getElementById("remaining");
 
 let attempt = document.getElementById("attempt");
 
+guess.focus();
 
 const guessGame = function () {
     if (attempt.innerText >= 1) {
@@ -43,13 +44,15 @@ const guessGame = function () {
         } 
     } else {
         warning.innerText = "Sorry, You lost the game. Game Over!"
-        // guess.value = "";
+        attempt.innerText ="";
+        
     };
+    guess.value = "";
 }
     
 check.addEventListener("click", guessGame); 
 guess.addEventListener("keydown", (e) => {
-    if (e.code === 'Enter') {
+    if (e.keyCode === 13) {
         guessGame();
     }
 })
