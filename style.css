@@ -25,6 +25,12 @@
 
 .container .input {
     margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
 }
 
 #user-input {
