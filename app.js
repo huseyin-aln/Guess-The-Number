@@ -2,7 +2,6 @@ let randomNumber = Math.floor(Math.random() * 100 + 1);
 console.log(randomNumber);
 
 let guess = document.getElementById("user-input");
-// console.log(guess);
 
 let check = document.getElementById("check-button");
 
@@ -22,30 +21,38 @@ const guessGame = function () {
             
         } else {
             if (guess.value == randomNumber) {
-                warning.innerText = "Congratulations"
-                // attempt.innerText--;
+                warning.innerText = "!Congratulations!"
+                guess.value = "";
+                
             
             } else if (guess.value > randomNumber) {
                 warning.innerText = "Decrease the number you entered";
-                // attempt.innerText--;
+                guess.value = "";
+
+                
 
             } else if (guess.value < randomNumber) {
             warning.innerText = "Increase the number you entered";
-            // attempt.innerText--;
+            guess.value = "";
+
             }
         
         } 
     } else {
         warning.innerText = "Sorry, You lost the game. Game Over!"
-        // attempt.innerText--;
+        guess.value = "";
+
     };
 }
     
 check.addEventListener("click", guessGame); 
-check.addEventListener("keydown", (e) => {
+guess.addEventListener("keydown", (e) => {
     if (e.code === 'Enter') {
         guessGame();
     }
 })
 
-restart.addEventListener("click", guessGame);
+restart.addEventListener("click", () => {
+    location.reload()
+});
+
