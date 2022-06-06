@@ -22,26 +22,28 @@ const guessGame = function () {
         } else {
             if (guess.value == randomNumber) {
                 warning.innerText = "!Congratulations!"
-                guess.value = "";
+                // guess.value = "";
+                attempt.innerText ="";
                 
             
             } else if (guess.value > randomNumber) {
                 warning.innerText = "Decrease the number you entered";
-                guess.value = "";
+                
+                document.getElementById("last").innerText = guess.value;
+                // guess.value = "";
 
                 
 
             } else if (guess.value < randomNumber) {
             warning.innerText = "Increase the number you entered";
-            guess.value = "";
-
+            document.getElementById("first").innerText = guess.value;
+            // guess.value = "";
             }
         
         } 
     } else {
         warning.innerText = "Sorry, You lost the game. Game Over!"
-        guess.value = "";
-
+        // guess.value = "";
     };
 }
     
